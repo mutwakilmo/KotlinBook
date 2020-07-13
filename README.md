@@ -1,6 +1,7 @@
 # KotlinBook
 
 
+
 #### 1. How does Kotlin work on Android?
 
 Just like Java, the Kotlin code is also compiled into the Java bytecode and is executed at runtime by the Java Virtual Machine i.e. JVM. When a Kotlin file named  `Main.kt`  is compiled then it will eventually turn into a class and then the bytecode of the class will be generated. The name of the bytecode file will be  `MainKt.class`  and this file will be executed by the JVM.
@@ -176,3 +177,418 @@ fun main(args: Array<String>) {
 -   If you want your property to be initialized from outside in a way probably unknown beforehand, use lateinit.
 
 [Learn more about the difference between lateinit and lazy from MindOrks blog](https://blog.mindorks.com/learn-kotlin-lateinit-vs-lazy).
+
+![Thumbnail Image](https://s3.ap-south-1.amazonaws.com/mindorks-server-uploads/professional-course-card-small-731715510354c16d.png)
+
+30% DISCOUNT NOW
+
+##### Android Online Course for Professionals by MindOrks
+
+Join and learn Dagger, Kotlin, RxJava, MVVM, Architecture Components, Coroutines, Unit Testing and much more.
+
+[ENROLL NOW](https://mindorks.com/android-app-development-online-course-for-professionals)
+
+#### 18. Is there any difference between == operator and === operator?
+
+Yes. The  `==`  operator is used to compare the values stored in variables and the  `===`  operator is used to check if the reference of the variables are equal or not. But in the case of primitive types, the  `===`  operator also checks for the value and not reference.
+
+```java
+// primitive example
+val int1 = 10 
+val int2 = 10
+println(int1 == int2) // true
+println(int1 === int2) // true
+// wrapper example
+val num1 = Integer(10)
+val num2 = Integer(10)
+println(num1 == num2) // true
+println(num1 === num2) //false
+```
+
+#### 19. What is the forEach in Kotlin?
+
+In Kotlin, to use the functionality of a for-each loop just like in Java, we use a  `forEach`  function. The following is an example of the same:
+
+```java
+var listOfMindOrks = listOf("mindorks.com", "blog.mindorks.com", "afteracademy.com")
+listOfMindOrks.forEach {
+ Log.d(TAG,it)
+}
+```
+
+#### 20. What are companion objects in Kotlin?
+
+In Kotlin, if you want to write a function or any member of the class that can be called without having the instance of the class then you can write the same as a member of a companion object inside the class.
+
+To create a  **companion**  object, you need to add the  `companion`  keyword in front of the object declaration.
+
+The following is an example of a companion object in Kotlin:
+
+```java
+class ToBeCalled {
+ companion object Test {
+ fun callMe() = println("You are calling me :)")
+ }
+}
+fun main(args: Array<String>) {
+ ToBeCalled.callMe()
+}
+```
+
+[Learn more about companion object from MindOrks blog](https://blog.mindorks.com/companion-object-in-kotlin).
+
+#### 21. What is the equivalent of Java static methods in Kotlin?
+
+To achieve the functionality similar to Java static methods in Kotlin, we can use:
+
+-   companion object
+-   package-level function
+-   object
+
+[Read more about this from MindOrks blog](https://blog.mindorks.com/what-is-the-equivalent-of-java-static-methods-in-kotlin).
+
+#### 22. What is the difference between FlatMap and Map in Kotlin?
+
+-   FlatMap is used to combine all the items of lists into one list.
+-   Map is used to transform a list based on certain conditions.
+
+[Read more about FlatMap and Map in Kotlin from MindOrks blog](https://blog.mindorks.com/flatmap-vs-map-in-kotlin).
+
+#### 23. What is the difference between List and Array types in Kotlin?
+
+If you have a list of data that is having a fixed size, then you can use an Array. But if the size of the list can vary, then we have to use a mutable list.
+
+[Learn more about the difference between List and Array from MindOrks blog](https://blog.mindorks.com/difference-between-list-and-array-types-in-kotlin).
+
+#### 24. Can we use the new keyword to instantiate a class object in Kotlin?
+
+No, in Kotlin we don't have to use the  `new`  keyword to instantiate a class object. To instantiate a class object, simply we use:
+
+```java
+var varName = ClassName()
+```
+
+#### 25. What are visibility modifiers in Kotlin?
+
+A visibility modifier or access specifier or access modifier is a concept that is used to define the scope of something in a programming language. In Kotlin, we have four visibility modifiers:
+
+-   **private:**  visible inside that particular class or file containing the declaration.
+-   **protected:**  visible inside that particular class or file and also in the subclass of that particular class where it is declared.
+-   **internal:**  visible everywhere in that particular module.
+-   **public:**  visible to everyone.
+
+Note: By default, the visibility modifier in Kotlin is  **public**.
+
+[Learn more about visibility modifiers in Kotlin from MindOrks blog](https://blog.mindorks.com/learn-kotlin-visibility-modifiers-private-protected-internal-public).
+
+#### 26. How to create a Singleton class in Kotlin?
+
+A singleton class is a class that is defined in such a way that only one instance of the class can be created and is used where we need only one instance of the class like in logging, database connections, etc.
+
+To create a Singleton class in Kotlin, you need to use the object keyword.
+
+```java
+object AnySingletonClassName
+```
+
+> Note: You can't use constructor in object, but you can use init.
+
+[Learn more about Singleton class from MindOrks blog](https://blog.mindorks.com/how-to-create-a-singleton-class-in-kotlin).
+
+#### 27. What are init blocks in Kotlin?
+
+`init`  blocks are initializer blocks that are executed just after the execution of the primary constructor. A class file can have one or more init blocks that will be executed in series. If you want to perform some operation in the primary constructor, then it is not possible in Kotlin, for that, you need to use the  `init`  block.
+
+[Learn more about init blocks from MindOrks blog](https://blog.mindorks.com/understanding-init-block-in-kotlin).
+
+#### 28. What are the types of constructors in Kotlin?
+
+-   **Primary constructor:**  These constructors are defined in the class header and you can't perform some operation in it, unlike Java's constructor.
+-   **Secondary constructor:**  These constructors are declared inside the class body by using the constructor keyword. You must call the primary constructor from the secondary constructor explicitly. Also, the property of the class can’t be declared inside the secondary constructor. There can be more than one secondary constructors in Kotlin.
+
+[Learn more about Primary and Secondary constructors from MindOrks blog](https://blog.mindorks.com/primary-and-secondary-constructors-in-kotlin).
+
+#### 29. Is there any relationship between primary and secondary constructors?
+
+Yes, when using a secondary constructor, you need to call the primary constructor explicitly.
+
+#### 30. What is the default type of argument used in a constructor?
+
+By default, the type of arguments of a constructor in val. But you can change it to var explicitly.
+
+#### 31. What are Coroutines in Kotlin?
+
+A framework to manage concurrency in a more performant and simple way with its lightweight thread which is written on top of the actual threading framework to get the most out of it by taking the advantage of cooperative nature of functions.
+
+**This is an important interview question**.
+
+[Learn more about Kotlin Coroutines with examples from MindOrks blog](https://blog.mindorks.com/mastering-kotlin-coroutines-in-android-step-by-step-guide).
+
+#### 32. What is suspend function in Kotlin Coroutines?
+
+Suspend function is the building block of the Coroutines in Kotlin. Suspend function is a function that could be started, paused, and resume. To use a suspend function, we need to use the suspend keyword in our normal function definition.
+
+[Learn more about the suspend function from MindOrks blog](https://blog.mindorks.com/suspend-function-in-kotlin-coroutines).
+
+#### 33. What is the difference between Launch and Async in Kotlin Coroutines?
+
+The difference is that the  `launch{}`  does not return anything and the  `async{}`  returns an instance of  `Deferred<T>`, which has an  `await()`  function that returns the result of the coroutine like we have future in Java in which we do  `future.get()`  to the get the result.
+
+In other words:
+
+-   launch: fire and forget
+-   async: perform a task and return a result
+
+[Learn more about Launch vs Async from MindOrks video](https://www.youtube.com/watch?v=nC30UiDv8Xc).
+
+#### 34. What are scopes in Kotlin Coroutines?
+
+[Learn from MindOrks blog](https://blog.mindorks.com/mastering-kotlin-coroutines-in-android-step-by-step-guide).
+
+![Thumbnail Image](https://s3.ap-south-1.amazonaws.com/mindorks-server-uploads/professional-course-card-small-774804c1abcb9b1b.png)
+
+30% DISCOUNT NOW
+
+##### Android Online Course for Professionals by MindOrks
+
+Join and learn Dagger, Kotlin, RxJava, MVVM, Architecture Components, Coroutines, Unit Testing and much more.
+
+[ENROLL NOW](https://mindorks.com/android-app-development-online-course-for-professionals)
+
+#### 35. How Exception Handling is done in Kotlin Coroutines?
+
+[Learn from MindOrks blog](https://blog.mindorks.com/exception-handling-in-kotlin-coroutines).
+
+#### 36. How to choose between a switch and when in Kotlin?
+
+Whenever we want to handle many if-else conditions, then we generally use switch-case statements. But Kotlin provides a more concise option i.e. in Kotlin, we can use when in place of the switch. And, when can be used as:
+
+-   expression
+-   arbitrary condition expression
+-   without argument
+-   with two or more choices
+
+For example:
+
+```java
+when(number) {
+ 1 -> println("One")
+ 2, 3 -> println("Two or Three")
+ 4 -> println("Four")
+ else -> println("Number is not between 1 and 4")
+}
+```
+
+[Learn more about when from MindOrks blog](https://blog.mindorks.com/replace-switch-with-when-in-kotlin).
+
+#### 37. What is the open keyword in Kotlin used for?
+
+By default, the classes and functions are final in Kotlin. So, you can't inherit the class or override the functions. To do so, you need to use the open keyword before the class and function. For example:
+
+[Learn more about open keyword from MindOrks blog](https://blog.mindorks.com/understanding-open-keyword-in-kotlin).
+
+#### 38. What are lambdas expressions?
+
+Lambdas expressions are anonymous functions that can be treated as values i.e. we can pass the lambdas expressions as arguments to a function return them, or do any other thing we could do with a normal object. For example:
+
+```java
+val add : (Int, Int) -> Int = { a, b -> a + b }
+val result = add(9, 10)
+```
+
+[Learn more about Lambdas from MindOrks blog](https://blog.mindorks.com/understanding-higher-order-functions-and-lambdas-in-kotlin).
+
+#### 39. What are Higher-Order functions in Kotlin?
+
+A higher-order function is a function that takes functions as parameters or returns a function. For example, A function can take functions as parameters.
+
+```java
+fun passMeFunction(abc: () -> Unit) {
+ // I can take function
+ // do something here
+ // execute the function
+ abc()
+}
+```
+
+For example, A function can return another function.
+
+```java
+fun add(a: Int, b: Int): Int {
+ return a + b
+}
+```
+
+And, we have a function  **returnMeAddFunction**  which takes zero parameters and returns a function of the type  **((Int, Int) -> Int)**.
+
+```java
+fun returnMeAddFunction(): ((Int, Int) -> Int) {
+ // can do something and return function as well
+ // returning function
+ return ::add
+}
+```
+
+And to call the above function, we can do:
+
+```java
+val add = returnMeAddFunction()
+val result = add(2, 2)
+```
+
+[Learn more about Higher-Order functions from MindOrks blog](https://blog.mindorks.com/understanding-higher-order-functions-and-lambdas-in-kotlin).
+
+#### 40. What are extension functions in Kotlin?
+
+Extension functions are like extensive properties attached to any class in Kotlin. By using extension functions, you can add some methods or functionalities to an existing class even without inheriting the class. For example: Let's say, we have views where we need to play with the visibility of the views. So, we can create an extension function for views like,
+
+```java
+fun View.show() {
+ this.visibility = View.VISIBLE
+}
+
+fun View.hide() {
+ this.visibility = View.GONE
+}
+```
+
+and to use it we use, like,
+
+```java
+toolbar.hide()
+```
+
+[Learn more about extension functions from MindOrks blog](https://blog.mindorks.com/extension-functions-vs-static-utility-class).
+
+#### 41. What is an infix function in Kotlin?
+
+An infix function is used to call the function without using any bracket or parenthesis. You need to use the infix keyword to use the infix function.
+
+```java
+class Operations {
+ var x = 10; 
+ infix fun minus(num: Int) {
+ 	this.x = this.x - num
+ } 
+}
+fun main() {
+ val opr = Operations()
+ opr minus 8
+ print(opr.x)
+}
+```
+
+#### 42. What is an inline function in Kotlin?
+
+Inline function instruct compiler to insert complete body of the function wherever that function got used in the code. To use an Inline function, all you need to do is just add an inline keyword at the beginning of the function declaration.
+
+[Learn more about Inline functions from MindOrks blog](https://blog.mindorks.com/understanding-inline-noinline-and-crossinline-in-kotlin).
+
+#### 43. What is noinline in Kotlin?
+
+While using an inline function and want to pass some lambda function and not all lambda function as inline, then you can explicitly tell the compiler which lambda it shouldn't inline.
+
+```java
+inline fun doSomethingElse(abc: () -> Unit, noinline xyz: () -> Unit) {
+ abc()
+ xyz()
+}
+```
+
+[Learn more about noinline functions from MindOrks blog](https://blog.mindorks.com/understanding-inline-noinline-and-crossinline-in-kotlin).
+
+#### 44. What are Reified types in Kotlin?
+
+When you are using the concept of Generics to pass some class as a parameter to some function and you need to access the type of that class, then you need to use the reified keyword in Kotlin.
+
+For example:
+
+```java
+inline fun <reified T> genericsExample(value: T) {
+ println(value)
+ println("Type of T: ${T::class.java}")
+}
+fun main() {
+ genericsExample<String>("Learning Generics!")
+ genericsExample<Int>(100)
+}
+```
+
+[Learn more about Reified keyword from MindOrks blog](https://blog.mindorks.com/what-are-reified-types-in-kotlin).
+
+#### 45. What is the operator overloading in Kotlin?
+
+In Kotlin, we can use the same operator to perform various tasks and this is known as operator overloading. To do so, we need to provide a member function or an extension function with a fixed name and operator keyword before the function name because normally also, when we are using some operator then under the hood some function gets called. For example, if you are writing  `num1+num2`, then it gets converted to  `num1.plus(num2)`.
+
+For example:
+
+```java
+fun main() {
+ val bluePen = Pen(inkColor = "Blue")
+ bluePen.showInkColor()
+
+ val blackPen = Pen(inkColor = "Black")
+ blackPen.showInkColor()
+
+ val blueBlackPen = bluePen + blackPen
+ blueBlackPen.showInkColor()
+}
+
+ operator fun Pen.plus(otherPen: Pen):Pen{
+ val ink = "$inkColor, ${otherPen.inkColor}"
+ return Pen(inkColor = ink)
+ }
+
+ data class Pen(val inkColor:String){
+ fun showInkColor(){ println(inkColor)}
+ }
+```
+
+[Learn more about operator overloading from MindOrks blog](https://blog.mindorks.com/operator-overloading-in-kotlin).
+
+#### 46. Explain the use-case of let, run, with, also, apply in Kotlin.
+
+[Learn from MindOrks blog](https://blog.mindorks.com/using-scoped-functions-in-kotlin-let-run-with-also-apply).
+
+#### 47. What are pair and triple in Kotlin?
+
+Pair and Triples are used to return two and three values respectively from a function and the returned values can be of the same data type or different.
+
+```java
+val pair = Pair("My Age: ", 25)
+print(pair.first + pair.second)
+```
+
+[Learn more about Pairs and Triples from MindOrks blog](https://blog.mindorks.com/pair-and-triple-in-kotlin).
+
+#### 48. What are labels in Kotlin?
+
+Any expression written in Kotlin is called a label. For example, if we are having a  _for-loop_  in our Kotlin code then we can name that  _for-loop_  expression as a label and will use the label name for the  _for-loop_.
+
+We can create a label by using an identifier followed by the  `@`  sign. For example,  `name@`,  `loop@`,  `xyz@`, etc. The following is an example of a label:
+
+```java
+loop@ for (i in 1..10) {
+ // some code goes here
+}
+```
+
+The name of the above for-loop is  `loop`.
+
+[Learn more about labels in Kotlin from MindOrks blog](https://blog.mindorks.com/learn-kotlin-returns-jumps-labels).
+
+#### 49. What are the benefits of using a Sealed Class over Enum?
+
+Sealed classes give us the flexibility of having  **different**  **types of subclasses and also containing the state**. The important point to be noted here is the subclasses that are extending the Sealed classes should be either nested classes of the Sealed class or should be declared in the same file as that of the Sealed class.
+
+[Learn more about Sealed classes from MindOrks blog](https://blog.mindorks.com/learn-kotlin-sealed-classes).
+
+#### 50. What are collections in Kotlin?
+
+[Learn from MindOrks video](https://www.youtube.com/watch?v=XeRt2ZZ-jkA).
+
+Prepare these 50 questions for your interview and also go through the given link in each question to have a better knowledge of the topic.
+
+Also, you can find the Android Interview Questions  **[here](https://github.com/MindorksOpenSource/android-interview-questions)**.
+
+Share this blog with other developers who are going to give some Android interview.
